@@ -1,5 +1,5 @@
-name: 'irasnyd/puppet-lint-action'
-author: 'Ira W. Snyder <https://github.com/irasnyd/>'
+name: 'lcogtwebmaster/puppet-lint-action'
+author: 'Las Cumbres Observatory <https://lco.global/>'
 description: 'GitHub Action for puppet-lint'
 runs:
   using: 'docker'

@@ -9,7 +9,7 @@ recommended [Puppet language style guide](puppet.com/docs/puppet/latest/style_gu
 
 Puppet Lint validates only code style; it does not validate syntax. If you wish
 to perform syntax validation, you can use the
-[puppet-parser-validate-action](https://github.com/irasnyd/puppet-parser-validate-action/)
+[puppet-parser-validate-action](https://github.com/LCOGT/puppet-parser-validate-action/)
 Github Action.
 
 ## Usage
@@ -32,13 +32,13 @@ jobs:
       uses: actions/checkout@v2
 
     - name: puppet-lint
-      uses: irasnyd/puppet-lint-action@master
+      uses: LCOGT/puppet-lint-action@master
       with:
         args: ./
 ```
 
 If you wish to use a specific version, without needing to rebuild the container
-each time, you can use the version hosted on the [Docker Hub](https://hub.docker.com/r/irasnyd/puppet-parser-validate-action).
+each time, you can use the version hosted on the [Docker Hub](https://hub.docker.com/r/lcogtwebmaster/puppet-lint-action).
 
 ```yaml
 name: Puppet Lint
@@ -55,7 +55,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: puppet-lint
-      uses: docker://irasnyd/puppet-lint-action:2.4.2-1
+      uses: docker://lcogtwebmaster/puppet-lint-action:2.4.2-2
       with:
         args: ./
 ```
@@ -104,7 +104,7 @@ jobs:
 
     # Puppet Lint on added/modified Puppet manifests
     - name: Puppet Lint
-      uses: docker://irasnyd/puppet-lint-action:2.4.2-1
+      uses: docker://lcogtwebmaster/puppet-lint-action:2.4.2-2
       with:
         args: --no-140chars-check --no-class_inherits_from_params_class-check --no-relative_classname_inclusion-check ${{ steps.puppet_manifests.outputs.files }}
       if: "steps.puppet_manifests.outputs.numfiles > 0"
